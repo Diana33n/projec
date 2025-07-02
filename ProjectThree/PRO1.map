@@ -1,0 +1,140 @@
+MPLINK 4.41, Linker
+Linker Map File - Created Fri Jun 20 15:48:27 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0004fa
+                   .cinit    romdata   0x00027d    program   0x000004
+      .config_2007_PRO1.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00027e      
+                            0x002007    0x002007      
+            640 out of 8454 program addresses used, program memory utilization is 7%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      ABC   0x000189    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    AGAIN   0x000036    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  COMNWRT   0x00022e    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  Chk_Ack   0x00008f    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                 Chk_Ack1   0x000096    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  DELAY15   0x000263    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  DELAY1S   0x000187    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  DELAY25   0x000256    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     DIV1   0x0000a3    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     DIV2   0x0000b6    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     DIV3   0x0000e4    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     DIV4   0x0000f4    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                Exit_Ten1   0x00013b    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                Exit_Ten2   0x000154    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               Exit_Unit1   0x00016d    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               Exit_Unit2   0x000186    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                INCR_TEN1   0x000130    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                INCR_TEN2   0x000149    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               INCR_UNIT1   0x000162    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               INCR_UNIT2   0x00017b    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     MREP   0x000015    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               MULMESSAGE   0x000203    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                PrintNUM1   0x0001a6    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                PrintNUM2   0x0001c5    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     REP1   0x000013    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                RESET_TEN   0x000138    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               RESET_TEN2   0x000151    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+              RESET_UNIT1   0x00016a    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+              RESET_UNIT2   0x000183    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                   RESULT   0x00018d    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  Rep_ADD   0x00009d    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                 Rep_ADD2   0x0000b0    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                   SDELAY   0x000270    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+           SKIP_INCR_TEN1   0x00012c    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+           SKIP_INCR_TEN2   0x000145    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+          SKIP_INCR_UNIT1   0x00015e    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+          SKIP_INCR_UNIT2   0x000177    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    START   0x000001    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     STAY   0x000260    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    STAY1   0x00026d    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    STAY2   0x00027a    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     STOP   0x000120    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     TEN1   0x000123    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     TEN2   0x00013c    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    UNIT1   0x000155    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    UNIT2   0x00016e    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               WLCMESSAGE   0x0001e4    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack2   0x0000c6    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack3   0x0000cb    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack4   0x0000ce    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack5   0x0000d3    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack6   0x0000d6    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack7   0x0000db    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     send   0x000242    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    START   0x000001    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     REP1   0x000013    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     MREP   0x000015    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    AGAIN   0x000036    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  Chk_Ack   0x00008f    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                 Chk_Ack1   0x000096    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  Rep_ADD   0x00009d    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     DIV1   0x0000a3    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                 Rep_ADD2   0x0000b0    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     DIV2   0x0000b6    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack2   0x0000c6    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack3   0x0000cb    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack4   0x0000ce    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack5   0x0000d3    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack6   0x0000d6    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                chck_Ack7   0x0000db    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     DIV3   0x0000e4    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     DIV4   0x0000f4    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     STOP   0x000120    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     TEN1   0x000123    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+           SKIP_INCR_TEN1   0x00012c    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                INCR_TEN1   0x000130    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                RESET_TEN   0x000138    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                Exit_Ten1   0x00013b    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     TEN2   0x00013c    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+           SKIP_INCR_TEN2   0x000145    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                INCR_TEN2   0x000149    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               RESET_TEN2   0x000151    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                Exit_Ten2   0x000154    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    UNIT1   0x000155    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+          SKIP_INCR_UNIT1   0x00015e    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               INCR_UNIT1   0x000162    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+              RESET_UNIT1   0x00016a    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               Exit_Unit1   0x00016d    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    UNIT2   0x00016e    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+          SKIP_INCR_UNIT2   0x000177    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               INCR_UNIT2   0x00017b    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+              RESET_UNIT2   0x000183    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               Exit_Unit2   0x000186    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  DELAY1S   0x000187    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                      ABC   0x000189    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                   RESULT   0x00018d    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                PrintNUM1   0x0001a6    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                PrintNUM2   0x0001c5    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               WLCMESSAGE   0x0001e4    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+               MULMESSAGE   0x000203    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  COMNWRT   0x00022e    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     send   0x000242    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  DELAY25   0x000256    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                     STAY   0x000260    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                  DELAY15   0x000263    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    STAY1   0x00026d    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                   SDELAY   0x000270    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+                    STAY2   0x00027a    program     static C:\Users\Diana\Desktop\ProjectThree\pro1.asm
+
+
