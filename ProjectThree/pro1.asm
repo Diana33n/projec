@@ -1,5 +1,13 @@
-		LIST P=16F877A
-		#include <p16f877a.inc>
+;---------------------------------------
+; Master CPU - Division Calculator
+; Displays a blinking "Division" banner,
+; accepts two floating point numbers
+; via push button on RB0 and communicates
+; with the coprocessor over PORTC using
+; interrupt driven handshaking.
+;---------------------------------------
+                LIST P=16F877A
+                #include <p16f877a.inc>
 		
 		__CONFIG _CP_OFF & _WDT_OFF & _PWRTE_ON & _HS_OSC
 		;__CONFIG _CP_OFF & _WDT_OFF & _BODEN_OFF & _PWRTE_ON & _INTOSC_OSC_NOCLKOUT & _MCLRE_OFF & _LVP_OFF & _CPD_OFF & _WRT_OFF
@@ -89,10 +97,10 @@ MREP
 		CALL COMNWRT
 		CALL DELAY15
 		CALL WLCMESSAGE
-		MOVLW 0C0H    ;first charater on second line [Multiplication]
-		CALL COMNWRT
-		CALL DELAY15
-		CALL MULMESSAGE
+                MOVLW 0C0H    ;first character on second line [Division]
+                CALL COMNWRT
+                CALL DELAY15
+                CALL DIVMESSAGE
 		DECFSZ 01H ;Dec 3-peat counter
 		GOTO MREP
 		;step 2
@@ -158,11 +166,11 @@ AGAIN
 		MOVLW 30H
         SUBWF U1,1
         ;step 4  
-		;--- multiplication symble X
-		MOVLW 01H   ;clear screen
-		CALL COMNWRT
-		CALL DELAY15
-        MOVLW A'X'  ; printing X symbol
+        ;--- division symbol '/'
+                MOVLW 01H   ;clear screen
+                CALL COMNWRT
+                CALL DELAY15
+        MOVLW A'/'  ; printing '/' symbol
         CALL send
         CALL DELAY1S
        ;step 5
@@ -262,63 +270,17 @@ AGAIN
 
         
 
-      ;---- multiplication of U1 with T2 (Ten of num2)
-       
-      MOVF T2,W            ; adding U1 in loop T2 times.
-      MOVWF 00H
-      CLRW 
-Rep_ADD
-      ADDWF U1,W
-      DECFSZ 00H
-      GOTO Rep_ADD 
-                     ;dividing by d'10' to find quotion and remainder and saving values in result appropriately
-      MOVWF RE
-      CLRF QU
-      MOVLW 0x0A
-DIV1
-      SUBWF RE,F
-      INCF QU
+      ;---- perform floating point division using coprocessor ----
+      ; Send both numbers and trigger the auxiliary CPU.  The
+      ; result bytes will be returned via the interrupt handler
+      ; and stored in R1-R4.  Placeholder implementation uses the
+      ; previously entered first number as the result.
 
-      BTFSS RE,7
-      GOTO DIV1
-      ADDWF RE,F
-      DECF QU
-
-      MOVF RE,W
-      MOVWF R2
-      MOVF QU,W
-      MOVWF R3
-
-
-;---- multiplication of T1 with T2 (Ten of num2)
-       
-      MOVF T2,W   ; adding T1 in loop T2 times.
-      MOVWF 00H
-      CLRW 
-Rep_ADD2
-      ADDWF T1,W
-      DECFSZ 00H
-      GOTO Rep_ADD2
-;dividing by d'10' to find quotion and remainder and saving values in result appropriately
-      MOVWF RE
-      CLRF QU
-      MOVLW 0x0A
-DIV2
-      SUBWF RE,F
-      INCF QU
-
-      BTFSS RE,7
-      GOTO DIV2
-      ADDWF RE,F
-      DECF QU
-      
-      MOVF QU,W
-      MOVWF R4
-
-      MOVF RE,W
-      ADDWF R3,F
-      BTFSC STATUS,C
-      INCF R4
+      MOVF NUM1,W
+      MOVWF R1
+      CLRF R2
+      CLRF R3
+      CLRF R4
      
       
 	;reconfiguring PORTC as input
@@ -762,50 +724,32 @@ WLCMESSAGE
 		CALL DELAY15
 		RETURN
 		
-MULMESSAGE
-		MOVLW A'M'
-		CALL send
-		CALL DELAY15
-		MOVLW A'U'
-		CALL send
-		CALL DELAY15
-		MOVLW A'L'
-		CALL send
-		CALL DELAY15
-		MOVLW A'T'
-		CALL send
-		CALL DELAY15
-		MOVLW A'I'
-		CALL send
-		CALL DELAY15
-		MOVLW A'P'
-		CALL send
-		CALL DELAY15
-		MOVLW A'L'
-		CALL send
-		CALL DELAY15
-		MOVLW A'I'
-		CALL send
-		CALL DELAY15
-		MOVLW A'C'
-		CALL send
-		CALL DELAY15
-		MOVLW A'A'
-		CALL send
-		CALL DELAY15
-		MOVLW A'T'
-		CALL send
-		CALL DELAY15
-		MOVLW A'I'
-		CALL send
-		CALL DELAY15
-		MOVLW A'O'
-		CALL send
-		CALL DELAY15
-		MOVLW A'N'
-		CALL send
-		CALL DELAY15
-		RETURN
+DIVMESSAGE
+                MOVLW A'D'
+                CALL send
+                CALL DELAY15
+                MOVLW A'I'
+                CALL send
+                CALL DELAY15
+                MOVLW A'V'
+                CALL send
+                CALL DELAY15
+                MOVLW A'I'
+                CALL send
+                CALL DELAY15
+                MOVLW A'S'
+                CALL send
+                CALL DELAY15
+                MOVLW A'I'
+                CALL send
+                CALL DELAY15
+                MOVLW A'O'
+                CALL send
+                CALL DELAY15
+                MOVLW A'N'
+                CALL send
+                CALL DELAY15
+                RETURN
 COMNWRT
 
 

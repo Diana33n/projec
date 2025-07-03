@@ -1,0 +1,3 @@
+; Proteus design placeholder
+; Two PIC16F877A connected via PORTC
+; RB0 push button with pull-up, LCD on PORTD, 4MHz crystal

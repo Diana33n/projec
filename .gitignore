@@ -1,0 +1,11 @@
+*.hex
+*.o
+*.cof
+*.map
+*.lst
+*.err
+*.mcp
+*.mcs
+*.mcw
+*.pdsprj.*.workspace
+*.workspace
