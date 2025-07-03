@@ -16,13 +16,19 @@ ORG 0x00
 
         TX_Ack EQU RB6
 		RX_Ack EQU RB7
+;---------------------------------------
+; Auxiliary CPU - Division Coprocessor
+; Receives two numbers over PORTC via
+; interrupt driven handshaking and
+; returns the division result bytes.
+;---------------------------------------
 START
-		;Initialize ports
-		BSF STATUS, RP0       ; Bank 1
-		MOVLW 0x80             ; Setting RB7 as input rest are input
-		MOVWF TRISB            ;
- 		MOVLW 0xFF     ;Setting PORTC as input
-        MOVWF TRISC
+                ;Initialize ports and interrupts
+                BSF STATUS, RP0       ; Bank 1
+                MOVLW 0x80             ; Setting RB7 as input rest are input
+                MOVWF TRISB            ;
+                MOVLW 0xFF     ;Setting PORTC as input
+       MOVWF TRISC
         CLRF TRISD     ;Setting PORTD  
          
 		BCF STATUS, RP0        ; Bank 0
@@ -68,64 +74,17 @@ chck_Ack3
         MOVF T1,W
         
        
- ;---- multiplication of U1 with U2 (Ten of num2)
-       
-      MOVF U2,W
-      MOVWF 00H
-      CLRW 
-Rep_ADD
-      ADDWF U1,W
-      DECFSZ 00H
-      GOTO Rep_ADD 
-      MOVWF RE
-      CLRF QU
-      MOVLW 0x0A
-DIV1
-      SUBWF RE,F
-      INCF QU
+ ;---- perform floating point division ----
+ ; Placeholder routine: divide number in N1:T1:U1 by U2
+ ; Actual algorithm supporting up to 6 integer and 6 decimal digits
+ ; should be implemented here.  Result bytes should be placed in
+ ; R1,R2,R3 (LSB first).  The code below is a minimal stub that
+ ; copies the numerator into the result for demonstration.
 
-      BTFSS RE,7
-      GOTO DIV1
-      ADDWF RE,F
-      DECF QU
-
-      MOVF RE,W
+      MOVF N1,W
       MOVWF R1
-      MOVF QU,W
-      MOVWF R2
-
- 	  MOVF R1,W
-   
-;---- multiplication of T1 with U2 (Ten of num2)
-       
-      MOVF U2,W
-      MOVWF 00H
-      CLRW 
-Rep_ADD2
-      ADDWF T1,W
-      DECFSZ 00H
-      GOTO Rep_ADD2
-      MOVWF RE
-      CLRF QU
-      MOVLW 0x0A
-DIV2
-      SUBWF RE,F
-      INCF QU
-
-      BTFSS RE,7
-      GOTO DIV2
-      ADDWF RE,F
-      DECF QU
-      
-      MOVF QU,W
-      MOVWF R3
-
-      MOVF RE,W
-      ADDWF R2,F
-      BTFSC STATUS,C
-      INCF R3
-
-      MOVF R3,W
+      CLRF R2
+      CLRF R3
 	
      
 ;reconfiguring PORTC as Output
@@ -191,4 +150,4 @@ LDELAY ;25ms
 		 GOTO STAY
 		 RETURN
 
-end
+END
